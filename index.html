@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>repl.it</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <script src="script.js"></script>
+	<h3>EMAIL SIGNATURE GENERATOR</h3>
+	<h4>For Commerical Staff & Agents</h4>
+
+	<form id="frm1">
+		Full Name (with Designations): <input type="text" name="fullname" placeholder="John Smith, SIOR®, CRE®, CCIM®, ALC, RLI"><br>
+      Title: <input type="text" name="title" placeholder="Commercial Associate"><br>
+      Cell Phone Number: <input type="tel" name="cell" placeholder="123-456-7890"><br>
+      Direct Line: <input type="tel" name="direct" placeholder="123-456-7890"><br>
+      </form>
+
+      <br><button onclick=handleData();>Submit</button><br><br>
+      <textarea id="html-code" rows="4"></textarea><br/>
+      <input type="button" id="downloadButton" value="Download File"/>
+      <button onclick=copyCode();>Copy to Clipboard</button>
+
+  </body>
+</html>
