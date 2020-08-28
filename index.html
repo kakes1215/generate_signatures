@@ -8,21 +8,22 @@
 </head>
 
 <body>
+  <div>
   <script src="script.js"></script>
-	<h3>EMAIL SIGNATURE GENERATOR</h3>
-	<h4>For Commerical Staff & Agents</h4>
-
-	<form id="frm1">
+	<h3>Email Signature Generator</h3> 
+  <form id="frm1">
 		Full Name (with Designations): <input type="text" name="fullname" placeholder="John Smith, SIOR®, CRE®, CCIM®, ALC, RLI"><br>
       Title: <input type="text" name="title" placeholder="Commercial Associate"><br>
       Cell Phone Number: <input type="tel" name="cell" placeholder="123-456-7890"><br>
       Direct Line: <input type="tel" name="direct" placeholder="123-456-7890"><br>
       </form>
+      <button  onclick=handleData();>Submit</button> <br><br>
 
-      <br><button onclick=handleData();>Submit</button><br><br>
-      <textarea id="html-code" rows="4"></textarea><br/>
-      <input type="button" id="downloadButton" value="Download File"/>
-      <button onclick=copyCode();>Copy to Clipboard</button>
-
+  
+	<textarea id="html-code" rows="20" cols = "100"></textarea><br/>
+  <button id="downloadButton">Download File </button>
+<!--   <input type="button" id="downloadButton" value="Download File"/>
+   -->  <button onclick=copyCode();>Copy to Clipboard</button>
+  </div>
   </body>
-</html>
+  </html>
