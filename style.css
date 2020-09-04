@@ -19,6 +19,9 @@ select {
     box-sizing: border-box;
 }
 
+
+/* Handles Phone Number inputs in Form */
+
 input[type=tel],
 select {
     width: 100%;
@@ -30,38 +33,33 @@ select {
     box-sizing: border-box;
 }
 
-input[type=submit] {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
+
+/* Handles the font and format of the div */
 
 div {
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 5px;
-    background-color: #f2f2f2;
+    background-color: whitesmoke;
     padding: 20px;
 }
 
-.h3 {
+
+/* Formats the Email Signature Generator Title */
+
+div h3 {
     font-family: Arial, Helvetica, sans-serif;
+    color: #007481;
+    font-size: 30px;
 }
 
-.h4 {
-    font-family: Arial, Helvetica, sans-serif;
-}
+
+/* Handles the format of all the buttons */
 
 div button {
-    background-color: #4CAF50;
-    /* Green */
+    background-color: #007481;
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 8px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
