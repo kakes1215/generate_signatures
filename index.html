@@ -19,15 +19,20 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
+
 <!--Body-->
 
 <body>
+    <!-- Enter a phone number here: <input type="text" id="phoneNumber1" onkeypress="return numberPressed(event);" /> -->
     <div>
         <h3>Email Signature Generator</h3>
         <form id="frm1">
             <!--Form for Employee Info-->
-            Full Name (with Designations): <input type="text" name="fullname" placeholder="John Smith, SIOR®, CRE®, CCIM®, ALC, RLI"><br> Title: <input type="text" name="title" placeholder="Commercial Associate"><br> Cell Phone Number: <input type="tel"
-                name="cell" placeholder="123-456-7890"><br> Direct Line: <input type="tel" name="direct" placeholder="123-456-7890"><br>
+            Full Name (with Designations): <input type="text" name="fullname" placeholder="John Smith, SIOR®, CRE®, CCIM®, ALC, RLI"><br> Title: <input type="text" name="title" placeholder="Commercial Associate"><br>
+            <!--*********************************************************************************-->
+            Cell Phone Number: <input type="text" name="cell" id="cellNum" onkeypress="return numberPressed(event);" placeholder="Cell Phone Number"><br>
+            <!--*********************************************************************************************************-->
+            Direct Line: <input type="text" name="direct" id="directNum" onkeypress="return numberPressed(event);" placeholder="Direct Phone Number" /><br>
         </form>
         <button onclick=handleData();>Submit</button>
         <!--Submit Button which triggers the handleData() function in script.js-->
@@ -38,5 +43,26 @@
         <button onclick=copyCode();>Copy to Clipboard</button><br/><br/>
     </div>
 </body>
+
+<!--Handles event listeners for the phone numbers format-->
+<script>
+    // Format the phone number as the user types it
+    document.getElementById('cellNum').addEventListener('keyup', function(evt) {
+        var phoneNumber = document.getElementById('cellNum');
+        phoneNumber.value = phoneFormat(phoneNumber.value);
+    });
+
+    // We need to manually format the phone number on page load
+    document.getElementById('cellNum').value = phoneFormat(document.getElementById('cellNum').value);
+
+    // Format the phone number as the user types it
+    document.getElementById('directNum').addEventListener('keyup', function(evt) {
+        var phoneNumber = document.getElementById('directNum');
+        phoneNumber.value = phoneFormat(phoneNumber.value);
+    });
+
+    // We need to manually format the phone number on page load
+    document.getElementById('directNum').value = phoneFormat(document.getElementById('directNum').value);
+</script>
 
 </html>
