@@ -16,6 +16,7 @@
 
     <!--Javascript and Style files-->
     <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -26,8 +27,19 @@
         <h3>Email Signature Generator</h3>
         <form id="frm1">
             <!--Form for Employee Info-->
-            Full Name (with Designations): <input type="text" name="fullname" placeholder="John Smith, SIOR®, CRE®, CCIM®, ALC, RLI"><br> Title: <input type="text" name="title" placeholder="Commercial Associate"><br> Cell Phone Number: <input type="tel"
-                name="cell" placeholder="123-456-7890"><br> Direct Line: <input type="tel" name="direct" placeholder="123-456-7890"><br>
+            Full Name (with Designations): <input type="text" name="fullname" placeholder="John Smith, SIOR®, CRE®, CCIM®, ALC, RLI"><br>
+
+            <!--jdsflkdjskfljsdklf-->
+            Title: <input type="text" name="title" placeholder="Commercial Associate"><br>
+
+            <table id="myTable" style="width:100%">
+            </table>
+            <p>
+                <input type="button" value="&#43 Add Another Title">
+            </p>
+
+            <!--jdfklsjlksdfkldsj-->
+            Cell Phone Number: <input type="tel" name="cell" placeholder="123-456-7890"><br> Direct Line: <input type="tel" name="direct" placeholder="123-456-7890"><br>
         </form>
         <button onclick=handleData();>Submit</button>
         <!--Submit Button which triggers the handleData() function in script.js-->
@@ -36,6 +48,15 @@
         <textarea id="html-code" rows="20" cols="100"></textarea><br/><br/>
         <button onclick=startDownload();>Start Download</button>
         <button onclick=copyCode();>Copy to Clipboard</button><br/><br/>
+
+        <script>
+            $('#myTable').on('click', 'input[type="button"]', function() {
+                $(this).closest('tr').remove();
+            })
+            $('p input[type="button"]').click(function() {
+                $('#myTable').append('<tr><td><input type="text" class="fname" /></td><td><input type="button" value="Remove Title" style="background-color: #007481;border: none;color: white;padding: 8px 20px;text-align: center;text-decoration: none;display: inline-block;font-size: 12px;" /></td></tr>')
+            });
+        </script>
     </div>
 </body>
 
