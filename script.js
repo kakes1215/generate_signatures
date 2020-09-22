@@ -14,7 +14,7 @@ function handleData() {
     var userInfo = {
         fn: form.elements[0].value,
         title: form.elements[1].value,
-        addedTitles: cellPhoneNum: form.elements[2].value,
+        cellPhoneNum: form.elements[2].value,
         directLine: form.elements[3].value,
         address: '150 N Market St. Wichita, KS 67202',
         addressLink: 'https://www.google.com/maps/place/150+N+Market+St,+Wichita,+KS+67202/@37.6875767,-97.3388842,17z/data=!3m1!4b1!4m5!3m4!1s0x87bae3c213cd7f51:0x57ef5a084a7b960e!8m2!3d37.6875767!4d-97.3366955'

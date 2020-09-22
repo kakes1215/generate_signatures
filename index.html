@@ -46,11 +46,11 @@
 
         <script>
             //JQuery code to add/remove multiple titles
-            $('#myTable').on('click', 'input[type="button"]', function() {
+            $('#multipleTitles').on('click', 'input[type="button"]', function() {
                 $(this).closest('tr').remove();
             })
             $('p input[type="button"]').click(function() {
-                $('#myTable').append('<tr><td><input type="text" class="fname" /></td><td><input type="button" value="Remove Title" style="background-color: #007481;border: none;color: white;padding: 8px 20px;text-align: center;text-decoration: none;display: inline-block;font-size: 12px;" /></td></tr>')
+                $('#multipleTitles').append('<tr><td><input type="text" class="fname" /></td><td><input type="button" value="Remove Title" style="background-color: #007481;border: none;color: white;padding: 8px 20px;text-align: center;text-decoration: none;display: inline-block;font-size: 12px;" /></td></tr>')
             });
         </script>
     </div>
