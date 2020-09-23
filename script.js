@@ -9,18 +9,38 @@
  * Takes in the data from the form and stores that data in an object
  */
 function handleData() {
-    var form = document.getElementById("frm1");
-
     var userInfo = {
-        fn: form.elements[0].value,
-        title: form.elements[1].value,
-        cellPhoneNum: form.elements[2].value,
-        directLine: form.elements[3].value,
+        fn: document.getElementById("fullname").value,
+        ftitle: document.getElementById("ftitle").value,
+        cellPhoneNum: document.getElementById("cell").value,
+        directLine: document.getElementById("direct").value,
         address: '150 N Market St. Wichita, KS 67202',
         addressLink: 'https://www.google.com/maps/place/150+N+Market+St,+Wichita,+KS+67202/@37.6875767,-97.3388842,17z/data=!3m1!4b1!4m5!3m4!1s0x87bae3c213cd7f51:0x57ef5a084a7b960e!8m2!3d37.6875767!4d-97.3366955'
     }
+
+    var multipleTitles = document.getElementsByClassName("fname")
+    if (isEmpty(multipleTitles) == false) {
+        var i;
+        for (i = 0; i < multipleTitles.length; i++) {
+            var temp = multipleTitles[i].value;
+            var propName = "title" + i;
+            userInfo[propName] = temp;
+
+        }
+    }
     generateSignature(userInfo)
+
 }
+
+function isEmpty(obj) {
+    for (var prop in obj) {
+        if (obj.hasOwnProperty(prop))
+            return false;
+    }
+
+    return true;
+}
+
 /**
  * Generates the HTML signature and displays it in the textbox
  * 
