@@ -2,7 +2,7 @@
  * script.js
  * Handles the background Javascript code for index.html
  * Created by: Kaylynn Diaz-Schott
- * Last Modified: 09/18/2020
+ * Last Modified: 09/23/2020
  */
 
 /**
