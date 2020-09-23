@@ -21,7 +21,6 @@
 </head>
 
 <!--Body-->
-
 <body>
     <div>
         <h3>Email Signature Generator</h3>
@@ -32,7 +31,8 @@
             Title: <input type="text" id="ftitle" placeholder="Commercial Associate">
             <table id="multipleTitles" style="width:100%"></table>
             <!--Button to add another title-->
-            <p><input type="button" value="&#43 Add Another Title"></p>Cell Phone Number: <input type="tel" id="cell" placeholder="123-456-7890"><br> Direct Line: <input type="tel" id="direct" placeholder="123-456-7890"><br>
+            <p><input type="button" value="&#43 Add Another Title"></p>Cell Phone Number: <input type="tel" id="cell" onkeypress="return numberPressed(event);" placeholder="123-456-7890"><br> Direct Line: <input type="tel" id="direct" onkeypress="return numberPressed(event);"
+                placeholder="123-456-7890"><br>
         </form>
         <button onclick=handleData();>Submit</button>
         <!--Submit Button which triggers the handleData() function in script.js-->
@@ -54,5 +54,26 @@
         </script>
     </div>
 </body>
+
+<!--Handles event listeners for the phone numbers format-->
+<script>
+    // Format the phone number as the user types it
+    document.getElementById('cell').addEventListener('keyup', function(evt) {
+        var phoneNumber = document.getElementById('cell');
+        phoneNumber.value = phoneFormat(phoneNumber.value);
+    });
+
+    // We need to manually format the phone number on page load
+    document.getElementById('cell').value = phoneFormat(document.getElementById('cell').value);
+
+    // Format the phone number as the user types it
+    document.getElementById('direct').addEventListener('keyup', function(evt) {
+        var phoneNumber = document.getElementById('direct');
+        phoneNumber.value = phoneFormat(phoneNumber.value);
+    });
+
+    // We need to manually format the phone number on page load
+    document.getElementById('direct').value = phoneFormat(document.getElementById('direct').value);
+</script>
 
 </html>
