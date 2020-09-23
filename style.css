@@ -55,7 +55,8 @@ div h3 {
 
 /* Handles the format of all the buttons */
 
-div button {
+div button,
+p input {
     background-color: #007481;
     border: none;
     color: white;

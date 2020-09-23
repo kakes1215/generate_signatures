@@ -9,24 +9,39 @@
  * Takes in the data from the form and stores that data in an object
  */
 function handleData() {
-    var form = document.getElementById("frm1");
+
     var userInfo = {
-        fn: form.elements[0].value,
-        title: form.elements[1].value,
-        cellPhoneNum: form.elements[2].value,
-        directLine: form.elements[3].value,
-        address: '150 N Market St. Wichita, KS 67202',
-        addressLink: 'https://www.google.com/maps/place/150+N+Market+St,+Wichita,+KS+67202/@37.6875767,-97.3388842,17z/data=!3m1!4b1!4m5!3m4!1s0x87bae3c213cd7f51:0x57ef5a084a7b960e!8m2!3d37.6875767!4d-97.3366955'
+        fn: document.getElementById("fullname").value.toUpperCase(),
+        ftitle: document.getElementById("ftitle").value,
+        cellPhoneNum: document.getElementById("cell").value,
+        directLine: document.getElementById("direct").value,
     }
-    generateSignature(userInfo)
+
+    var multipleTitles = document.getElementsByClassName("fname")
+    var otherTitles = [];
+    for (i = 0; i < multipleTitles.length; i++) { otherTitles[i] = multipleTitles[i].value; }
+    generateSignature(userInfo, otherTitles)
+
 }
+
 /**
  * Generates the HTML signature and displays it in the textbox
  * 
  * @param {object} userInfo The object created from the form data 
  */
-function generateSignature(userInfo) {
-    var signature = `<br><br><table style="width:500px;font-size:10pt;font-family:Arial;" cellpadding="0" cellspacing="0"> <tbody style="width:100%;"> <tr> <td style="font-size:10pt;line-height:20px;font-family:Arial;width:514px;padding-bottom:10px;vertical-align:top;"valign="top" colspan="2"><b> <span style="font-size:10pt;font-family:Arial;color:#313e49;">${userInfo.fn}</span></b><br> ${userInfo.title} </b><br> <span style="font-size:10pt;font-family:Arial;color:#313e49;">Cell: <a href="tel:${userInfo.cellPhoneNum}" style="text-decoration:none;color:#313e49;">${userInfo.cellPhoneNum}</a> <span style="margin-left:15px;">Direct: <a href="tel:${userInfo.directLine}" style="text-decoration:none;color:#313e49;">${userInfo.directLine}</a></span> </span> </td> </tr> <tr> <td style="width: 80%;display:block;height: 7px;background: #cfd2d3;"></td> </tr> <tr> <td style="vertical-align:top; text-align:left;" valign="top"> <table cellpadding="0" cellspacing="0"> <tr> <td style="width: 100px; padding-top: 15px; padding-right: 15px;"> <a href="https://weigandcommercial.com/" target="_blank" style="text-decoration:none;color:#313e49;"> <img src="https://weigandcommercial.com/assets/smaller-logo.png" style="width:100px;"> </a> </td> <td style="width: 385px;"> <span style="font-size:10pt;font-family:Arial;color:#313e49;width:77%;line-height:20px;padding-top:15px;">J.P. Weigand & Sons, Inc. Commercial Division<br> <a href="${userInfo.addressLink}" target="_blank" style="text-decoration:none;color:#313e49;">${userInfo.address}</a><br><b> <a href="https://weigandcommercial.com/" target="_blank" style="text-decoration:none;color:#313e49;">WeigandCommercial.com</a></b> </span> </td> </tr> </table> <br> <span style="font-size:6pt;font-family:Arial;color:#313e49;width:77%;"> This email is intended for the use of the individual or entity to which it is addressed and may contain information that is privileged, confidential and exempt from disclosure under applicable law. If the reader of this email message is not the intended recipient, you are hereby notified that any dissemination, distribution or copying of this communication is prohibited. If you have received this email in error, please notify us immediately by telephone at 316-262-6400 and also indicate the sender's name. Thank you. </span> </td> </tr> </tbody></table><html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head><!--[if gte mso 9]><xml><mso:CustomDocumentProperties><mso:_dlc_DocId msdt:dt="string">ZH5VYKZDD7K4-1937837267-2090</mso:_dlc_DocId><mso:_dlc_DocIdItemGuid msdt:dt="string">2667d998-d3ef-426d-a46d-fe855f85d653</mso:_dlc_DocIdItemGuid><mso:_dlc_DocIdUrl msdt:dt="string">https://weigandict.sharepoint.com/sites/WeigandITTeam/_layouts/15/DocIdRedir.aspx?ID=ZH5VYKZDD7K4-1937837267-2090, ZH5VYKZDD7K4-1937837267-2090</mso:_dlc_DocIdUrl></mso:CustomDocumentProperties></xml><![endif]--></head>`
+function generateSignature(userInfo, otherTitles) {
+    var beg = `<table style="width:500px;font-size:10pt;font-family:Arial;" cellpadding="0" cellspacing="0"> <tbody style="width:100%;"> <tr> <td style="font-size:10pt;line-height:20px;font-family:Arial;width:514px;padding-bottom:10px;vertical-align:top;" valign="top" colspan="2"><b> <span style="font-size:10pt;font-family:Arial;color:#313e49;">${userInfo.fn}</span></b><br> <span style="font-size:10pt;font-family:Arial;color:#313e49;"><i>${userInfo.ftitle}</i></span><br>`
+    var titlesString = ""
+    if (otherTitles.length != 0) {
+        var i;
+        var temp = " ";
+        for (i = 0; i < otherTitles.length; i++) {
+            temp = `${temp}</b><span style="font-size:10pt;font-family:Arial;color:#313e49;"><i>${otherTitles[i]}</i></span></b><br>`
+        }
+        titlesString = temp;
+    }
+    var end = `<span style="font-size:10pt;font-family:Arial;color:#313e49;">Cell: <a href="tel:${userInfo.cellPhoneNum}" style="text-decoration:none;color:#313e49;">${userInfo.cellPhoneNum}</a> <span style="margin-left:15px;">Direct: <a href="tel:${userInfo.directLine}" style="text-decoration:none;color:#313e49;">${userInfo.directLine}</a></span></span></td> </tr> <tr> <td style="width: 80%;display:block;height: 7px;background: #cfd2d3;"></td> </tr> <tr> <td style="vertical-align:top; text-align:left;" valign="top"> <table cellpadding="0" cellspacing="0"> <tr> <td style="width: 100px; padding-top: 15px; padding-right: 15px;"> <a href="https://weigandcommercial.com/" target="_blank" style="text-decoration:none;color:#313e49;"><img src="https://weigandcommercial.com/assets/smaller-logo.png" style="width:100px;"></a> </td> <td style="width: 385px;"> <span style="font-size:10pt;font-family:Arial;color:#313e49;width:77%;line-height:20px;padding-top:15px;">J.P. Weigand & Sons, Inc. Commercial Division<br><a href="https://www.google.com/maps/dir/37.6732192,-97.3840738/6530+E+13th+St+N,+Wichita,+KS+67206/@37.6906976,-97.3946774,12z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x87bafcd422ff0e8f:0xad2e3b2b559c9a85!2m2!1d-97.2604391!2d37.7088053" target="_blank" style="text-decoration:none;color:#313e49;">6530 E. 13th St. N. Wichita, KS 67206</a><br><b><a href="https://weigandcommercial.com/" target="_blank" style="text-decoration:none;color:#313e49;">WeigandCommercial.com</a></b></span> </td> </tr> </table> </td> </tr> </tbody></table><html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head><!--[if gte mso 9]><xml><mso:CustomDocumentProperties><mso:_dlc_DocId msdt:dt="string">ZH5VYKZDD7K4-1937837267-2168</mso:_dlc_DocId><mso:_dlc_DocIdItemGuid msdt:dt="string">dbf16402-497a-4b26-832d-98ba3b949a57</mso:_dlc_DocIdItemGuid><mso:_dlc_DocIdUrl msdt:dt="string">https://weigandict.sharepoint.com/sites/WeigandITTeam/_layouts/15/DocIdRedir.aspx?ID=ZH5VYKZDD7K4-1937837267-2168, ZH5VYKZDD7K4-1937837267-2168</mso:_dlc_DocIdUrl><mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Kaylynn Diaz-Schott</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor><mso:xd_Signature msdt:dt="string"></mso:xd_Signature><mso:Order msdt:dt="string">216800.000000000</mso:Order><mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId><mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl><mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID><mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Kaylynn Diaz-Schott</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author><mso:ContentTypeId msdt:dt="string">0x0101007625530775FB7A4DB3E63512A4151FB6</mso:ContentTypeId><mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl><mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex></mso:CustomDocumentProperties></xml><![endif]--><title></title></head> `
+    var signature = beg + titlesString + end;
     document.getElementById("html-code").value = signature;
 }
 
