@@ -18,21 +18,15 @@ To Setup Development Environment:
 1. Open folder in any editor to make changes 
 1. Commit and push any changes made
 
-To Setup Signature:
-Enter employee details in the respective fields:https://kakes1215.github.io/Generate_Signatures/
+### To Setup Signature:
+
+**Enter employee details in the respective fields:https://kakes1215.github.io/Generate_Signatures/**
 
 ![Main_Page](/images/mainPage.png)
 
-Click Submit
+**Click Submit**
 
 ![Submit](/images/inputInfo.png)
-
-
-HTML Code should appear
-
-![HTML_Code](/images/signatureGenerated.png)
- 
-Click Start Download or if you prefer to implement the code directly follow the directions below:
 
  ```
  To Copy and Paste the HTML code to Outlook Click Copy to Clipboard and use the following instructions:
@@ -40,6 +34,12 @@ Click Start Download or if you prefer to implement the code directly follow the 
  https://www.christopherbolt.com/support/knowledgebase/24/Installing-HTML-email-signatures-in-Microsoft-Outlook.html
  
 ```
+
+HTML Code should appear
+
+![HTML_Code](/images/signatureGenerated.png)
+ 
+Click Start Download or if you prefer to implement the code directly follow the directions below:
 
 Save the file
 
