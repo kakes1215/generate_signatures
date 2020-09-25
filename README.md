@@ -12,29 +12,27 @@ This was originally developed for J.P. Weigand & Sons Commercial Associates and 
 ## External Resources
 None
 ## Application Setup
-To Setup Development Environment
+To Setup Development Environment:
 1. Clone/Download this repository on your computer: https://www.jcchouinard.com/clone-github-repository-on-windows/
 1. Find the index.html file and double click to open in browser
 1. Open folder in any editor to make changes 
 1. Commit and push any changes made
 
 To Setup Signature:
-1. Enter employee details in the respective fields:https://kakes1215.github.io/Generate_Signatures/
+Enter employee details in the respective fields:https://kakes1215.github.io/Generate_Signatures/
 
 ![Main_Page](/images/mainPage.png)
 
-1. Click Submit
+Click Submit
 
 ![Submit](/images/inputInfo.png)
 
 
-1. HTML Code should appear
+HTML Code should appear
 
 ![HTML_Code](/images/signatureGenerated.png)
-
-1. Click Start Download or if you prefer to implement the code directly follow the directions below:
-
-![Download](/images/downloadsPage.png)
+ 
+Click Start Download or if you prefer to implement the code directly follow the directions below:
 
  ```
  To Copy and Paste the HTML code to Outlook Click Copy to Clipboard and use the following instructions:
@@ -43,15 +41,15 @@ To Setup Signature:
  
 ```
 
-1. Save the file
+Save the file
 
 ![Save_File](/images/saveFile.png)
 
-1. Go to Downloads and Double Click to Open File
+Go to Downloads and Double Click to Open File
 
 ![Downloads_Page](/images/downloadsPage.png)
 
-1. Signature should now be generated
+Signature should now be generated
 
 ![Final_Signature](/images/finalSignature.png)
 
