@@ -20,15 +20,20 @@ To Setup Development Environment
 
 To Setup Signature:
 1. Enter employee details in the respective fields:https://kakes1215.github.io/Generate_Signatures/
+
 ![Main_Page](/images/mainPage.png)
 
 1. Click Submit
+
 ![Submit](/images/inputInfo.png)
 
+
 1. HTML Code should appear
+
 ![HTML_Code](/images/signatureGenerated.png)
 
 1. Click Start Download or if you prefer to implement the code directly follow the directions below:
+
 ![Download](/images/downloadsPage.png)
 
  ```
@@ -39,12 +44,15 @@ To Setup Signature:
 ```
 
 1. Save the file
+
 ![Save_File](/images/saveFile.png)
 
 1. Go to Downloads and Double Click to Open File
+
 ![Downloads_Page](/images/downloadsPage.png)
 
 1. Signature should now be generated
+
 ![Final_Signature](/images/finalSignature.png)
 
 
