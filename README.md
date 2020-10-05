@@ -20,7 +20,7 @@ To Setup Development Environment:
 
 ### To Setup Signature:
 
-#### Enter employee details in the respective fields: https://kakes1215.github.io/Generate_Signatures/
+#### Enter employee details in the respective fields: https://weigandcommercial.com/generate-signature/index.html
 
 ![Main_Page](/images/mainPage.png)
 
