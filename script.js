@@ -30,7 +30,12 @@ function handleData() {
  * @param {object} userInfo The object created from the form data 
  */
 function generateSignature(userInfo, otherTitles) {
-    var beg = `<table style="width:500px;font-size:10pt;font-family:Arial;" cellpadding="0" cellspacing="0"> <tbody style="width:100%;"> <tr> <td style="font-size:10pt;line-height:20px;font-family:Arial;width:514px;padding-bottom:10px;vertical-align:top;" valign="top" colspan="2"><b> <span style="font-size:10pt;font-family:Arial;color:#313e49;">${userInfo.fn}</span></b><br> <span style="font-size:10pt;font-family:Arial;color:#313e49;"><i>${userInfo.ftitle}</i></span><br>`
+    var beg = `
+    <table style="width:500px;font-size:10pt;font-family:Arial;" cellpadding="0" cellspacing="0"> <tbody style="width:100%;"> 
+        <tr><td style="font-size:10pt;line-height:20px;font-family:Arial;width:514px;padding-bottom:10px;vertical-align:top;" valign="top" colspan="2"><b> 
+        <span style="font-size:10pt;font-family:Arial;color:#313e49;">${userInfo.fn}</span></b><br> 
+        <span style="font-size:10pt;font-family:Arial;color:#313e49;"><i>${userInfo.ftitle}</i></span><br>`
+
     var titlesString = ""
     if (otherTitles.length != 0) {
         var i;
@@ -40,7 +45,41 @@ function generateSignature(userInfo, otherTitles) {
         }
         titlesString = temp;
     }
-    var end = `<span style="font-size:10pt;font-family:Arial;color:#313e49;">Cell: <a href="tel:${userInfo.cellPhoneNum}" style="text-decoration:none;color:#313e49;">${userInfo.cellPhoneNum}</a> <span style="margin-left:15px;">Direct: <a href="tel:${userInfo.directLine}" style="text-decoration:none;color:#313e49;">${userInfo.directLine}</a></span></span></td> </tr> <tr> <td style="width: 80%;display:block;height: 7px;background: #cfd2d3;"></td> </tr> <tr> <td style="vertical-align:top; text-align:left;" valign="top"> <table cellpadding="0" cellspacing="0"> <tr> <td style="width: 100px; padding-top: 15px; padding-right: 15px;"> <a href="https://weigandcommercial.com/" target="_blank" style="text-decoration:none;color:#313e49;"><img src="https://weigandcommercial.com/assets/smaller-logo.png" style="width:100px;"></a> </td> <td style="width: 385px;"> <span style="font-size:10pt;font-family:Arial;color:#313e49;width:77%;line-height:20px;padding-top:15px;">J.P. Weigand & Sons, Inc. Commercial Division<br><a href="https://www.google.com/maps/dir//jp+weigand+and+sons/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x87bae3c213cd7f51:0x431f5462e134153f?sa=X&ved=2ahUKEwjoi6Ps1ITsAhUPQ60KHejJAVUQ9RcwDnoECA4QBA" target="_blank" style="text-decoration:none;color:#313e49;">150 N Market St, Wichita, KS 67202</a><br><b><a href="https://weigandcommercial.com/" target="_blank" style="text-decoration:none;color:#313e49;">WeigandCommercial.com</a></b></span> </td> </tr> </table> </td> </tr> </tbody></table><html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head><!--[if gte mso 9]><xml><mso:CustomDocumentProperties><mso:_dlc_DocId msdt:dt="string">ZH5VYKZDD7K4-1937837267-2168</mso:_dlc_DocId><mso:_dlc_DocIdItemGuid msdt:dt="string">dbf16402-497a-4b26-832d-98ba3b949a57</mso:_dlc_DocIdItemGuid><mso:_dlc_DocIdUrl msdt:dt="string">https://weigandict.sharepoint.com/sites/WeigandITTeam/_layouts/15/DocIdRedir.aspx?ID=ZH5VYKZDD7K4-1937837267-2168, ZH5VYKZDD7K4-1937837267-2168</mso:_dlc_DocIdUrl><mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Kaylynn Diaz-Schott</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor><mso:xd_Signature msdt:dt="string"></mso:xd_Signature><mso:Order msdt:dt="string">216800.000000000</mso:Order><mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId><mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl><mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID><mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Kaylynn Diaz-Schott</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author><mso:ContentTypeId msdt:dt="string">0x0101007625530775FB7A4DB3E63512A4151FB6</mso:ContentTypeId><mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl><mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex></mso:CustomDocumentProperties></xml><![endif]--><title></title></head> `
+    var end = `          
+            <span style="font-size:10pt;font-family:Arial;color:#313e49;">
+            Cell: <a href="tel:${userInfo.cellPhoneNum}" style="text-decoration:none;color:#313e49;">${userInfo.cellPhoneNum}</a>
+            <span style="margin-left:15px;">Direct: <a href="tel:${userInfo.directLine}" style="text-decoration:none;color:#313e49;">${userInfo.directLine}</a></span></span>
+        </td>
+        </tr>
+        <tr>
+        <td style="width: 80%;display:block;height: 7px;background: #cfd2d3;"></td>
+        </tr>
+        <tr>
+        <td style="vertical-align:top; text-align:left;" valign="top">
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td style="width: 100px; padding-top: 15px; padding-right: 15px;">
+                        <a href="https://weigandcommercial.com/" target="_blank" style="text-decoration:none;color:#313e49;"><img src="https://weigandcommercial.com/assets/smaller-logo.png" style="width:100px;"></a>
+                    </td>
+                    <td style="width: 385px;"> <span style="font-size:10pt;font-family:Arial;color:#313e49;width:77%;line-height:20px;padding-top:15px;">
+                    J.P. Weigand & Sons, Inc. Commercial Division
+                    <br><a href="https://www.google.com/maps/dir//jp+weigand+and+sons/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x87bae3c213cd7f51:0x431f5462e134153f?sa=X&ved=2ahUKEwjoi6Ps1ITsAhUPQ60KHejJAVUQ9RcwDnoECA4QBA" 
+                        target="_blank" style="text-decoration:none;color:#313e49;">150 N Market St, Wichita, KS 67202</a><br><b><a href="https://weigandcommercial.com/"
+                        target="_blank" style="text-decoration:none;color:#313e49;">WeigandCommercial.com</a></b>
+                </td>
+            </tr>
+            </table>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        </br>
+        <span style="font-size:6pt;font-family:Arial;color:#313e49;width:77%;"> This email is intended for the use of the individual or entity to which it is addressed and may contain information that is privileged, confidential and exempt from disclosure under applicable law. If the reader of this email message is not the intended recipient, you are hereby notified that any dissemination, distribution or copying of this communication is prohibited. If you have received this email in error, please notify us immediately by telephone at 316-262-6400 and also indicate the sender's name. Thank you. </span>                            </td>
+                </tr>
+        </tbody>
+        </table>
+        </html>
+    `
     var signature = beg + titlesString + end;
     document.getElementById("html-code").value = signature;
 }
