@@ -66,22 +66,13 @@ function generateSignature(userInfo, otherTitles) {
                     <br><a href="https://www.google.com/maps/dir//jp+weigand+and+sons/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x87bae3c213cd7f51:0x431f5462e134153f?sa=X&ved=2ahUKEwjoi6Ps1ITsAhUPQ60KHejJAVUQ9RcwDnoECA4QBA" 
                         target="_blank" style="text-decoration:none;color:#313e49;">150 N Market St, Wichita, KS 67202</a><br><b><a href="https://weigandcommercial.com/"
                         target="_blank" style="text-decoration:none;color:#313e49;">WeigandCommercial.com</a></b>
-                </td>
-            </tr>
-            </table>
-        </td>
-        </tr>
-        </tbody>
-        </table>
-        </br>
-        <span style="font-size:6pt;font-family:Arial;color:#313e49;width:77%;"> This email is intended for the use of the individual or entity to which it is addressed and may contain information that is privileged, confidential and exempt from disclosure under applicable law. If the reader of this email message is not the intended recipient, you are hereby notified that any dissemination, distribution or copying of this communication is prohibited. If you have received this email in error, please notify us immediately by telephone at 316-262-6400 and also indicate the sender's name. Thank you. </span>                            </td>
-                </tr>
-        </tbody>
-        </table>
-        </html>
+                </td></tr></table>
+        </td></tr></tbody></table></br>
+        <span style="font-size:6pt;font-family:Arial;color:#313e49;width:77%;"> This email is intended for the use of the individual or entity to which it is addressed and may contain information that is privileged, confidential and exempt from disclosure under applicable law. If the reader of this email message is not the intended recipient, you are hereby notified that any dissemination, distribution or copying of this communication is prohibited. If you have received this email in error, please notify us immediately by telephone at 316-262-6400 and also indicate the sender's name. Thank you.</span>
+        </tbody></table></html>
     `
     var signature = beg + titlesString + end;
-    document.getElementById("html-code").value = signature;
+    document.getElementById("html-code").value = signature.replace(/^\s+|\s+$/g, '');
 }
 
 /**
